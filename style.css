@@ -9,10 +9,24 @@
 body {
     background-image: linear-gradient(85deg, var(--red-background-colour), var(--purple-background-colour));
     margin: 0px;
+    background-size: 200% 200%;
+    height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
     font-family:'Roboto', sans-serif;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 /* svg{
@@ -67,10 +81,22 @@ svg#second{
 }
 
 .formContainer>h1{
-    font-size: 50px;
+    font-size: 3.2rem;
     font-weight: 800;
+    margin: 20px 0px 0px 0px;
 }
 
-.formContainer>h1>strong{
+.formContainer>h1>em{
+    font-style: italic;
+}
+
+.formContainer>h2{
+    margin: 0px;
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.formContainer>h2>em{
+    font-weight: 100;
     font-style: italic;
 }
