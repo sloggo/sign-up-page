@@ -1,0 +1,76 @@
+:root{
+    --red-background-colour: #FF4646;
+    --purple-background-colour: #9453FF;
+    --white-ui--transparent: rgba(217, 217, 217, 0.3);
+    --border-ui : 3px solid rgba(255, 255, 255, 0.2);
+    --font-color: #FFFFFF;
+}
+
+body {
+    background-image: linear-gradient(85deg, var(--red-background-colour), var(--purple-background-colour));
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    font-family:'Roboto', sans-serif;
+}
+
+/* svg{
+    margin: 0px;
+    overflow: visible;
+    box-sizing: border-box;
+    position: fixed;
+}
+svg#first{
+    margin: -10px;
+    float: left;
+    width: 700px;
+}
+
+svg#second{
+    margin-top: 500px;
+    margin-left: auto;
+    transform: rotate(80deg);
+    
+    width: 200px;
+}
+
+#circles g{
+    position: absolute;
+    animation: breathe 10s ease-in-out infinite;
+    animation-delay: calc(var(--order) *2000ms);
+    transform-origin: center;
+}
+
+@keyframes breathe{
+    50%{
+        transform: scale(1.2);
+    } 90%{
+        transform: scale(0.8);
+    }
+} */
+
+.formContainer{
+    margin-top: 100px;
+    width: 40%;
+    height: 800px;
+
+    background: var(--white-ui--transparent);
+    border: var(--border-ui);
+    backdrop-filter: blur(40px);
+    border-radius: 5rem;
+    color: var(--font-color);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formContainer>h1{
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.formContainer>h1>strong{
+    font-style: italic;
+}
