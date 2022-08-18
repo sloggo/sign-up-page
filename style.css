@@ -187,10 +187,6 @@ button[type='submit']:hover{
     transition: 0.1s;
 }
 
-input[type='email']:invalid{
-    border: 3px solid rgb(255, 0, 0);
-}
-
 input[type='email']::placeholder,
 input[type='tel']::placeholder{
     color: rgba(255, 255, 255, 0.356);
@@ -205,8 +201,9 @@ input[type='password']{
     padding-left: 40px;
 }
 
-input:focus:invalid{
+#invalidAfterInput{
     animation: invalidshake 0.3s ease;
+    border: 3px solid rgb(255, 0, 0);
 }
 
 @keyframes invalidshake{

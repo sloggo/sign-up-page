@@ -1,5 +1,8 @@
 const passwordOrig = document.querySelector('input#password')
 const passwordRep = document.querySelector('input#passwordRep')
+const inputs = document.querySelectorAll('.validityCheck')
+
+console.log(inputs)
 
 function checkPassRep(orig, rep) {
     if (orig.value === rep.value){
@@ -43,4 +46,17 @@ passwordRep.addEventListener('change', (event) =>{
         passwordRep.classList.add('invalid');
         console.log(passwordOrig.classList)
     }
+})
+
+inputs.forEach(input => {
+    input.addEventListener('change', (event) => {
+        if(event.target.checkValidity() === false) {
+            console.log('invalid')
+            if(!(event.target.id === 'invalidAfterInput')){
+                event.target.id = 'invalidAfterInput'
+            }
+        } else if(event.target.checkValidity() === true){
+            event.target.removeAttribute('id')
+        }
+    })
 })
