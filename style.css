@@ -17,6 +17,11 @@ body {
     font-family:'Roboto', sans-serif;
 }
 
+div{
+    margin: 0px;
+    padding: 0px;
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -77,6 +82,7 @@ form{
     flex-direction: column;
     gap: 30px;
     width: 75%;
+    height: 100%;
 }
 
 .formContainer>h1{
@@ -154,10 +160,9 @@ label{
 input[type='text'],
 input[type='email'],
 input[type='tel'],
-input[type='password']{
-    padding-top: 7px;
-    padding-bottom: 0px;
-    padding-left: 40px;
+input[type='password'],
+button[type='submit']{
+    
     color: var(--font-color);
     appearance: none;
     background-color: var(--white-ui--transparent);
@@ -172,7 +177,9 @@ input[type='password']{
 input[type='text']:focus,
 input[type='email']:focus,
 input[type='tel']:focus,
-input[type='password']:focus{
+input[type='password']:focus,
+button[type='submit']:focus,
+button[type='submit']:hover{
     outline: none;
     border: 3px solid rgba(255, 255, 255, .6);
     box-shadow: 0px 3px 0px rgba(255, 255, 255, 0.6);
@@ -187,4 +194,72 @@ input[type='email']:invalid{
 input[type='email']::placeholder,
 input[type='tel']::placeholder{
     color: rgba(255, 255, 255, 0.356);
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='password']{
+    padding-top: 7px;
+    padding-bottom: 0px;
+    padding-left: 40px;
+}
+
+input:focus:invalid{
+    animation: invalidshake 0.3s ease;
+}
+
+@keyframes invalidshake{
+    25%{
+        transform: translateX(-5px);
+    } 50%{
+        transform: translateX(5px);
+    } 75%{
+        transform: translateX(-3px);
+    } 100%{
+        transform: translateX(3px);
+    }
+}
+
+button[type='submit']{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 70px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    animation: buttonbreathe 1s infinite ease;
+}
+
+@keyframes buttonbreathe{
+    33%{
+        transform: scale(1.02);
+    } 66%{
+        transform: scale(0.98);
+    } 99%{
+        transform: scale(1);
+    }
+}
+
+form>div.bottomRow{
+    display: flex;
+    margin-top: auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.checkBox{
+    display: flex;
+    width: 100%;
+}
+
+.checkBox>input{
+    float: left;
+}
+
+.checkBox>label{
+    margin-left: auto;
 }
