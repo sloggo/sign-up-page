@@ -59,4 +59,15 @@ inputs.forEach(input => {
             event.target.removeAttribute('id')
         }
     })
+
+    input.addEventListener('focusout', (event) =>{
+        if(event.target.checkValidity() === false) {
+            console.log('invalid')
+            if(!(event.target.id === 'invalidAfterInput')){
+                event.target.id = 'invalidAfterInput'
+            }
+        } else if(event.target.checkValidity() === true){
+            event.target.removeAttribute('id')
+        }
+    })
 })
