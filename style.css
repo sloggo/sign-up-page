@@ -268,3 +268,11 @@ form>div.bottomRow{
     font-size: 1.2rem;
     font-weight: 500;
 }
+
+input[type='password'].valid{
+    border: 3px solid rgba(198, 255, 180, 0.514);
+}
+
+input[type='password'].invalid{
+    border: 3px solid rgb(255, 0, 0);
+}
